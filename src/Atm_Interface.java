@@ -7,12 +7,25 @@ public class Atm_Interface {
 			// TODO Auto-generated method stub
 			//declare and initialize balance, withdraw, and deposit  
 	        int balance = 10000, withdraw, deposit;  
+			int pin=9876;
+	 		int tries=0;
+	 		Scanner sc = new Scanner(System.in);
+	 		System.out.println("Enter pin");
+	 		int entry=sc.nextInt();
 	          
-	        //create scanner class object to get choice of user  
-	        Scanner sc = new Scanner(System.in);  
+	        //create scanner class object to get choice from user
 	          
 	        while(true)  
 	        {  
+		   	while (entry != pin) {
+	                 System.out.println("\nINCORRECT PIN. TRY AGAIN.");
+	                 System.out.println("ENTER YOUR PIN: ");
+	                 entry = sc.nextInt();
+
+	        	}
+	        	if (entry == pin)
+	                 System.out.println("\nPIN ACCEPTED. ACCESS GRANTED.");	
+			
 	            System.out.println("Automated Teller Machine");  
 	            System.out.println("Choose 1 for Withdraw");  
 	            System.out.println("Choose 2 for Deposit");  
